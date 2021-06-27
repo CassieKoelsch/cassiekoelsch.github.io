@@ -17,21 +17,24 @@
 //   font-size: 34px;
 // }
 .avatar {
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 
 .text {
-  position: absolute;
-  top: 225px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  //position: absolute;
+  //top: 225px;
+  //left: 50%;
+  //transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: center;
+  height: 52px;
   list-style: none;
   border-bottom: 0;
 }
 
 .text.hidden {
-  border-bottom: 1px solid #000;
+  //border-bottom: 1px solid #000;
 }
 
 .text li {
