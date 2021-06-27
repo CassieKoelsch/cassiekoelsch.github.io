@@ -12,12 +12,6 @@
       {% include projects.html %}
     </div>
 
-    {% if site.topics %}
-      <div class="my-6">
-        {% include interests.html %}
-      </div>
-    {% endif %}
-
     {% unless posts_total == 0 %}
       <div class="my-6">
         {% include thoughts.html %}
@@ -38,15 +32,19 @@
           </div>
         {% endunless %}
 
-        {% include projects.html %}
-
-        {% if site.topics %}
-          {% include interests.html %}
-        {% endif %}
+        {% include projects.html %}s
 
         {% unless posts_total == 0 %}
           {% include thoughts.html %}
         {% endunless %}
+
+        {% for post in site.posts %}
+        {% if post.layout == 'medium' %}
+        <li><a href="{{ post.medium_url }}"><em>{{ post.date | date_to_string }} - {{ post.title }}</em></a></li>
+        {% else %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}"><em>{{ post.date | date_to_string }} - {{ post.title }}<em></a></li>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
